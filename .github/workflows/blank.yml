@@ -4,7 +4,7 @@ name: ci
 on: push
 jobs:
     first-jobs:
-        runs-on: runner-github-action-lab
+        runs-on: self-hosted
         steps:
         - name: clone repo
           uses: actions/ckeckout@4
