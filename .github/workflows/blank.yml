@@ -12,6 +12,16 @@ jobs:
 
       - name: Show user info
         run: id
+        
+  docker-install:
+    runs-on: ubuntu-latest
+    steps:
+      - name: docker install
+        run: sudo apt install docker.io -y
+
+      - name: enable docker
+        run: sudo systemctl enable docker
+        
 
   configure:
     needs: setup
@@ -25,7 +35,7 @@ jobs:
 
   verify:
     needs: configure
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     steps:
       - name: Check Docker access
         run: docker ps || echo "Docker requires logout/login"
