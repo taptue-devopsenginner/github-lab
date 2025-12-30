@@ -15,7 +15,7 @@ jobs:
 
   configure:
     needs: setup
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     steps:
       - name: Add ubuntu to docker group
         run: sudo usermod -aG docker ubuntu
