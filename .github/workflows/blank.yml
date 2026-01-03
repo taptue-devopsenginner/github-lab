@@ -28,7 +28,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Add ubuntu to docker group
-        run: sudo usermod -aG docker ubuntu
+        run: sudo usermod -aG docker $user
 
       - name: Verify groups
         run: groups ubuntu
